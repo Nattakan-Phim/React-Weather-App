@@ -100,7 +100,8 @@ function Forecast({ weather }) {
         </div>
         </div>
       </div>
-      <div className="forecast">
+      <>
+      {/* <div className="forecast">
         <h3>5-Day Forecast:</h3>
         <div className="forecast-container">
           {forecastData &&
@@ -120,7 +121,8 @@ function Forecast({ weather }) {
               </div>
             ))}
         </div>
-      </div>
+      </div> */}
+      </>
     </div>
   );
 }        

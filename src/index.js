@@ -9,7 +9,6 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <App />
-    <Credit />
   </StrictMode>,
   rootElement
 );

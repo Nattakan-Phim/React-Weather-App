@@ -27,7 +27,7 @@ function App() {
       "August",
       "September",
       "October",
-      "Nocvember",
+      "November",
       "December"
     ];
     const days = [
@@ -72,7 +72,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const apiKey = "b03a640e5ef6980o4da35b006t5f2942";
-      const url = `https://api.shecodes.io/weather/v1/current?query=Rabat&key=${apiKey}`;
+      const url = `https://api.shecodes.io/weather/v1/current?query=Bangkok&key=${apiKey}`;
 
       try {
         const response = await axios.get(url);
@@ -91,7 +91,7 @@ function App() {
     <div className="App">
 
       {/* SearchEngine component */}
-      <SearchEngine query={query} setQuery={setQuery} search={search} />
+      {/* <SearchEngine query={query} setQuery={setQuery} search={search} /> */}
 
       {weather.loading && (
         <>
