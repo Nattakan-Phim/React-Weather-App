@@ -19,7 +19,7 @@ body {
   max-width: 700px;
   border-radius: 20px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-  padding: 20px 15px;
+  padding: 20px 0px;
 }
 
 .SearchEngine {
@@ -208,7 +208,7 @@ body {
 /* Desktop view */
 @media screen and (min-width: 768px) {
   .App {
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 100px; /* Increased margin for better spacing */
   }
 
@@ -225,7 +225,6 @@ body {
 /* Tablet view */
 @media screen and (max-width: 767px) {
   .App {
-    padding: 20px;
     margin-bottom: 80px; /* Adjusted margin for better spacing */
   }
 
@@ -303,7 +302,7 @@ body {
 /* Mobile view */
 @media screen and (max-width: 480px) {
   .App {
-    padding: 10px;
+    padding: 0px;
     margin-bottom: 100px; /* Increased margin for better spacing */
   }
 

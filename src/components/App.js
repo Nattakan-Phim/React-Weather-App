@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SearchEngine from "./SearchEngine";
 import Forecast from "./Forecast";
 
 import "../styles.css";
@@ -47,28 +46,6 @@ function App() {
     return date;
   };
 
-  const search = async (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      setQuery("");
-      setWeather({ ...weather, loading: true });
-      const apiKey = "b03a640e5ef6980o4da35b006t5f2942";
-      const url = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}`;
-
-      await axios
-        .get(url)
-        .then((res) => {
-          console.log("res", res);
-          setWeather({ data: res.data, loading: false, error: false });
-        })
-        .catch((error) => {
-          setWeather({ ...weather, data: {}, error: true });
-          setQuery("");
-          console.log("error", error);
-        });
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       const apiKey = "b03a640e5ef6980o4da35b006t5f2942";
@@ -89,10 +66,6 @@ function App() {
 
   return (
     <div className="App">
-
-      {/* SearchEngine component */}
-      {/* <SearchEngine query={query} setQuery={setQuery} search={search} /> */}
-
       {weather.loading && (
         <>
           <br />
