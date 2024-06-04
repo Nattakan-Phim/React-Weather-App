@@ -7,7 +7,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 function App() {
-  const [query, setQuery] = useState();
   const [weather, setWeather] = useState({
     loading: true,
     data: {},
