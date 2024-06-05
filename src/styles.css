@@ -18,7 +18,7 @@ body {
 .display{
   display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: space-around;
 }
 .weather-display{
   display: flex;
@@ -29,7 +29,6 @@ body {
 
 .App {
   text-align: center;
-  width: 100%;
   border-radius: 20px;
   padding: 0px 0px;
 }
@@ -44,46 +43,45 @@ body {
 }
 
 .city-name {
-  font-size: 20px;
-  margin-bottom: 10px;
+  margin-left: 0.4rem ;
+  font-size: 1.5rem;
 }
 
 .date {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
 .temp {
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 500;
   color: #eee;
   text-align: center;
-  border: solid 0.5rem;
-  margin: 0rem 2rem;
+  margin: 0rem 0.2rem;
 }
 
 .temp-deg {
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
 .temp-icon{
-  width: 100%;
+  width: 90%;
 }
 
 .weather-des {
   color: #eee;
-  font-size: 2rem;
-  font-weight: 500;
-  
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0.5rem 0rem;
+  margin-right: 1rem;
 }
 
 .weather-info {
   display: flex;
   align-items: center;
-  
   color: #eee;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
   width: 100%;
@@ -96,10 +94,6 @@ body {
   line-height: 1px;
 }
 
-.col p{
-  margin-left: 5px;
-  
-}
 
 .forecast-container {
   display: flex;

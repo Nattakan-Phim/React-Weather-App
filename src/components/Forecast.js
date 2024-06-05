@@ -37,18 +37,17 @@ function Forecast({ weather }) {
   const formatDay = (dateString) => {
     const options = { weekday: "short" };
     const date = new Date(dateString * 1000);
-    return date.toLocaleDateString("en-US", options);
+    return date.toLocaleDateString("en-GB", options); // en-GB ใช้รูปแบบ DD/MM/YYYY
   };
-
+  
   const getCurrentDate = () => {
-    const options = {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    };
-    const currentDate = new Date().toLocaleDateString("en-US", options);
-    return currentDate;
+    const currentDate = new Date();
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    const month = currentDate.toLocaleString("en-US", { month: "long" }); 
+    const year = currentDate.getFullYear();// ใช้สองหลักสุดท้ายของปี
+  
+    return `${day}\n${month}\n${year}`;
+
   };
 
   const toggleTemperatureUnit = () => {
@@ -71,9 +70,9 @@ function Forecast({ weather }) {
     <div className="display">
       {showCityName ? (
         <div className="city-name">
-          <h2>
+          <p>
             {data.city}, <span>{data.country}</span>
-          </h2>
+          </p>
         </div>
       ) : (
         <div className="date">
@@ -112,7 +111,6 @@ function Forecast({ weather }) {
               </div>
             </div>
           </div>
-         
       ) : (
         <p className="weather-des">{data.condition.description}</p>
       )}
