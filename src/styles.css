@@ -43,13 +43,14 @@ body {
 }
 
 .city-name {
-  margin-left: 0.4rem ;
+  margin-left: 0.7rem ;
   font-size: 1.5rem;
 }
 
 .date {
   font-size: 1.5rem;
   font-weight: 500;
+  margin-left: 0.7rem;
 }
 
 .temp {
