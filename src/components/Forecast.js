@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ReactAnimatedWeather from "react-animated-weather";
 
-function Forecast({ weather }) {
+const Forecast = ({ weather }) => {
   const { data } = weather;
   const [forecastData, setForecastData] = useState([]);
-  const [isCelsius, setIsCelsius] = useState(true); // Track temperature unit
+  const [isCelsius, setIsCelsius] = useState(true);
   const [showWeatherInfo, setShowWeatherInfo] = useState(true);
   const [showCityName, setShowCityName] = useState(true);
 
@@ -18,7 +18,7 @@ function Forecast({ weather }) {
         const response = await axios.get(url);
         setForecastData(response.data.daily);
       } catch (error) {
-        console.log("Error fetching forecast data:", error);
+        console.error("Error fetching forecast data:", error);
       }
     };
 
@@ -27,56 +27,40 @@ function Forecast({ weather }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowWeatherInfo((prevShowWeatherInfo) => !prevShowWeatherInfo);
-      setShowCityName((prevShowCityName) => !prevShowCityName);
-    }, 10000); // 10000 milliseconds = 10 seconds
+      setShowWeatherInfo((prev) => !prev);
+      setShowCityName((prev) => !prev);
+    }, 10000);
 
-    return () => clearInterval(interval); // Clean up the interval on unmount
+    return () => clearInterval(interval);
   }, []);
 
-  const formatDay = (dateString) => {
-    const options = { weekday: "short" };
-    const date = new Date(dateString * 1000);
-    return date.toLocaleDateString("en-GB", options); // en-GB ใช้รูปแบบ DD/MM/YYYY
+  const formatDay = (timestamp) => {
+    return new Date(timestamp * 1000).toLocaleDateString("en-GB", { weekday: "short" });
   };
-  
+
   const getCurrentDate = () => {
     const currentDate = new Date();
-    const day = currentDate.getDate().toString().padStart(2, '0');
-    const month = currentDate.toLocaleString("en-US", { month: "long" }); 
-    const year = currentDate.getFullYear();// ใช้สองหลักสุดท้ายของปี
-  
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const month = currentDate.toLocaleString("en-US", { month: "long" });
+    const year = currentDate.getFullYear();
     return `${day}\n${month}\n${year}`;
-
   };
 
-  const toggleTemperatureUnit = () => {
-    setIsCelsius((prevState) => !prevState);
-  };
+  const toggleTemperatureUnit = () => setIsCelsius((prev) => !prev);
 
-  const convertToFahrenheit = (temperature) => {
-    return Math.round((temperature * 9) / 5 + 32);
-  };
-
-  const renderTemperature = (temperature) => {
-    if (isCelsius) {
-      return Math.round(temperature);
-    } else {
-      return convertToFahrenheit(temperature);
-    }
-  };
+  const renderTemperature = (temperature) => isCelsius 
+    ? Math.round(temperature) 
+    : Math.round((temperature * 9) / 5 + 32);
 
   return (
     <div className="display">
       {showCityName ? (
         <div className="city-name">
-          <p>
-            {data.city}, <span>{data.country}</span>
-          </p>
+          <p>{data.city}, <p>{data.country}</p></p>
         </div>
       ) : (
         <div className="date">
-          <span>{getCurrentDate()}</span>
+          <p>{getCurrentDate()}</p>
         </div>
       )}
       <div className="temp">
@@ -91,31 +75,31 @@ function Forecast({ weather }) {
         <sup className="temp-deg" onClick={toggleTemperatureUnit}>
           {isCelsius ? "°C" : "°F"} | {isCelsius ? "°F" : "°C"}
         </sup>
-      </div> 
+      </div>
       {showWeatherInfo ? (
         <div className="weather-info">
-          <div className="">
-              <div className="col">
-                <ReactAnimatedWeather icon="WIND" size="20" />
-                <div>
-                  <p className="wind">{data.wind.speed}m/s </p>
-                  <p>WindSpeed</p>
-                </div>
+          <div className="weather-display">
+            <div className="col">
+              <ReactAnimatedWeather icon="WIND" size={20} color="#eee" />
+              <div>
+                <p className="wind">{data.wind.speed} m/s</p>
+                <p>Wind Speed</p>
               </div>
-              <div className="col">
-                <ReactAnimatedWeather icon="RAIN" size="20" />
-                <div>
-                  <p className="humidity">{data.temperature.humidity}% </p> 
-                  <p>Humidity</p>
-                </div>
+            </div>
+            <div className="col">
+              <ReactAnimatedWeather icon="RAIN" size={20} color="#eee" />
+              <div>
+                <p className="humidity">{data.temperature.humidity}%</p>
+                <p>Humidity</p>
               </div>
             </div>
           </div>
+        </div>
       ) : (
         <p className="weather-des">{data.condition.description}</p>
       )}
     </div>
   );
-}
+};
 
 export default Forecast;
