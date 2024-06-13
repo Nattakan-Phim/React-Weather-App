@@ -89,14 +89,14 @@ const Forecast = ({ weather }) => {
         <div className="weather-info">
           <div className="weather-display">
             <div className="col">
-              <ReactAnimatedWeather icon="WIND" size={40} color="#eee" />
+              <ReactAnimatedWeather icon="WIND" size={40} color="#000" />
               <div>
                 <p className="wind">{data.wind.speed} m/s</p>
                 
               </div>
             </div>
             <div className="col">
-              <ReactAnimatedWeather icon="RAIN" size={40} color="#eee" />
+              <ReactAnimatedWeather icon="RAIN" size={40} color="#000" />
               <div>
                 <p className="humidity">{data.temperature.humidity}%</p>
                 
