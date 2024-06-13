@@ -43,7 +43,7 @@ const Forecast = ({ weather }) => {
     const day = String(currentDate.getDate()).padStart(2, '0');
     const month = currentDate.toLocaleString("en-US", { month: "long" });
     const year = currentDate.getFullYear();
-    return `${day}\n${month}\n${year}`;
+    return `${day} ${month} ${year}`;
   };
 
   const toggleTemperatureUnit = () => setIsCelsius((prev) => !prev);
@@ -73,7 +73,7 @@ const Forecast = ({ weather }) => {
         )}
         {renderTemperature(data.temperature.current)}
         <sup className="temp-deg" onClick={toggleTemperatureUnit}>
-          {isCelsius ? "°C" : "°F"} | {isCelsius ? "°F" : "°C"}
+          {isCelsius ? "°C" : ""}  {isCelsius ? "" : "°C"}
         </sup>
       </div>
       {showWeatherInfo ? (
