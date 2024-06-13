@@ -34,6 +34,15 @@ const Forecast = ({ weather }) => {
     return () => clearInterval(interval);
   }, []);
 
+  // Add this useEffect to refresh the page every 1 hour
+  useEffect(() => {
+    const refreshInterval = setInterval(() => {
+      window.location.reload();
+    }, 3600000); // 1 hour in milliseconds
+
+    return () => clearInterval(refreshInterval);
+  }, []);
+
   const formatDay = (timestamp) => {
     return new Date(timestamp * 1000).toLocaleDateString("en-GB", { weekday: "short" });
   };
