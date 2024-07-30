@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Forecast from "./Forecast";
-
+import WeatherForecast from './WeatherForecast';
 import "../styles.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -87,7 +86,7 @@ function App() {
 
       {weather && weather.data && weather.data.condition && (
         // Forecast component
-        <Forecast weather={weather} toDate={toDate} />
+        <WeatherForecast weather={weather} toDate={toDate} />
       )}
     </div>
   );

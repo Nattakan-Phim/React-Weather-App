@@ -27,8 +27,7 @@ p {
 .display{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0rem 2rem;
+  justify-content: space-around;
 }
 .weather-display{
   display: flex;
@@ -54,33 +53,44 @@ p {
 
 .city-name {
   margin-left: 0.7rem ;
-  font-size: 1.6rem;
- 
-}
-
-.date {
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin-left: 0.7rem;
+  font-size: 1rem;
+  font-weight: 400;
   font-family: "Bebas Neue", sans-serif;
-  font-weight: 700;
   font-style: normal;
 }
 
+.date {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+}
+.time{
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  margin-bottom: 1rem;
+}
+
 .temp {
-  font-size: 5rem;
   font-weight: 500;
   color: #000;
   text-align: center;
-  width: 100%;
+}
+.icon-direc{
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  
+}
+.secound-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .temp-deg {
-  font-size: 2rem;
+  font-size: 5rem;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -88,10 +98,9 @@ p {
 }
 
 .temp-icon{
-  width: 20%;
+  width: 45%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 0.1rem;
 }
 .weather-des {
   color: #000;
