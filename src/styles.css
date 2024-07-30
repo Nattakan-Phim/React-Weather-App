@@ -65,7 +65,8 @@ p {
   font-weight: 400;
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
-  padding: 1.3rem 0rem;
+  padding-top: 1.3rem;
+  padding-top: 1rem;
 }
 
 .temp {
@@ -93,7 +94,7 @@ p {
 }
 
 .temp-icon{
-  width: 45%;
+  width: 35%;
   display: flex;
   font-size: 0.1rem;
 }

@@ -57,8 +57,6 @@ const WeatherForecast = ({ weather }) => {
         return `${hours} : ${minutes}`;
     }
 
-
-
     return (
         <>
             <div className="display">
