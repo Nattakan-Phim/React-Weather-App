@@ -28,10 +28,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 1rem;
-  border: solid white;
   background-image: url("../images/background.png");
   background-size: cover;
+  border-radius: 1rem;
 }
 
 .App {
@@ -87,7 +86,7 @@ p {
 .secound-card{
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
   padding: 5px;
 }

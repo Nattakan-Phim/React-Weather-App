@@ -49,7 +49,9 @@ const WeatherForecast = ({ weather }) => {
 
     return (
         <>
+        
             <div className="display">
+                
                 <div className="temp">
                     {data.condition.icon_url && (
                         <div className="icon-direc">
