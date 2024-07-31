@@ -29,7 +29,7 @@ p {
   align-items: center;
   justify-content: space-around;
   background-image: url("../images/background.png");
-  background-size: cover;
+ 
   border-radius: 1rem;
   border: solid white;
 }
