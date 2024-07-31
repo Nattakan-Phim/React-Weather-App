@@ -57,7 +57,7 @@ const WeatherForecast = ({ weather }) => {
                         <div className="icon-direc">
                             <img
                                 src={data.condition.icon_url}
-                                alt={data.condition.description}
+                                alt={data.condition.icon}
                                 className="temp-icon"
                             ></img>
                             <p>{data.condition.description}</p>
