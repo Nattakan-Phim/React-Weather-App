@@ -49,17 +49,17 @@ const WeatherForecast = ({ weather }) => {
 
     return (
         <>
-        
+
             <div className="display">
-                
+
                 <div className="temp">
                     {data.condition.icon_url && (
                         <div className="icon-direc">
-                            <img
-                                src={data.condition.icon_url}
-                                alt={data.condition.icon}
+                            <div
                                 className="temp-icon"
-                            ></img>
+                                style={{ backgroundImage: `url(${data.condition.icon_url})` }}
+                                alt={data.condition.icon}
+                            ></div>
                             <p>{data.condition.description}</p>
                         </div>
                     )}
