@@ -76,10 +76,12 @@ p {
   font-weight: 500;
   color: #000;
   text-align: center;
+  
 }
 .icon-direc{
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   height: 20vh;
   
 }
