@@ -81,8 +81,10 @@ p {
 .icon-direc{
   display: flex;
   align-items: center;
+  justify-content: center;
   justify-content: space-evenly;
-  height: 20vh;
+  height: 40vh;
+  width: 100%;
   
 }
 .secound-card{
@@ -101,7 +103,9 @@ p {
 }
 
 .temp-icon{
-  width: 35%;
+  width: 6vw;
+  height: 55vh;
   display: flex;
+  background-size: cover;
   font-size: 0.1rem;
 }
