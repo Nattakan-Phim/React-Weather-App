@@ -21,7 +21,6 @@ const WeatherForecast = ({ weather }) => {
                 console.error("Error fetching forecast data:", error);
             }
         };
-
         fetchForecastData();
     }, [data.city]);
 

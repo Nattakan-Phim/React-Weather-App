@@ -8,11 +8,11 @@
 }
 
 body {
-  background-image: url("../images/background.png");
+  /* background-image: url("../images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed; 
+  background-attachment: fixed;  */
 
   /* background-color: #000; */
   margin: 0;
@@ -28,6 +28,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-radius: 1rem;
+  border: solid white;
+  background-image: url("../images/background.png");
+  background-size: cover;
 }
 
 .App {
@@ -65,8 +69,8 @@ p {
   font-weight: 400;
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
-  padding-top: 1.3rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+  
 }
 
 .temp {
