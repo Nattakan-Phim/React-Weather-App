@@ -24,16 +24,7 @@ const WeatherForecast = ({ weather }) => {
         fetchForecastData();
     }, [data.city]);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setShowWeatherInfo((prev) => !prev);
-    //         setShowCityName((prev) => !prev);
-    //     }, 10000);
-
-    //     return () => clearInterval(interval);
-    // }, []);
-
-    // Add this useEffect to refresh the page every 1 hour
+    //Add this useEffect to refresh the page every 1 hour
     useEffect(() => {
         const refreshInterval = setInterval(() => {
             window.location.reload();
