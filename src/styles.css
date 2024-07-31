@@ -31,6 +31,7 @@ p {
   background-image: url("../images/background.png");
   background-size: cover;
   border-radius: 1rem;
+  border: solid white;
 }
 
 .App {
@@ -103,8 +104,8 @@ p {
 }
 
 .temp-icon{
-  width: 12vw;
-  height: 55vh;
+  width: 80px;
+  height: 80px;
   display: flex;
   background-size: cover;
   font-size: 0.1rem;
