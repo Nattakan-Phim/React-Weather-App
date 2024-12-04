@@ -28,7 +28,7 @@ const WeatherForecast = ({ weather }) => {
     useEffect(() => {
         const refreshInterval = setInterval(() => {
             window.location.reload();
-        }, 3600000); // 1 hour in milliseconds
+        }, 21600000 ); // 1 hour in milliseconds
 
         return () => clearInterval(refreshInterval);
     }, []);
